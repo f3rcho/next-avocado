@@ -15,7 +15,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <h1>Productos</h1>
       {productList.map((product, i) => (
         <div key={i}>{product.name}</div>
