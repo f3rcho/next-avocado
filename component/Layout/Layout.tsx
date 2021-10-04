@@ -1,14 +1,21 @@
 import React from 'react';
 import Navbar from 'component/Navbar/Navbar';
 
-import styles from './layout.module.css';
-
 const Layout: React.FC = ({ children }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <Navbar />
       {children}
       <footer>This is a footer</footer>
+
+      <style jsx>{`
+        footer {
+          background: salmon;
+        }
+        div {
+          background: pink;
+        }
+      `}</style>
     </div>
   );
 };
