@@ -6,7 +6,9 @@
     "database/db.ts"
     ],
     "assets":["assets/*"],
-    "components":["components/*"],
+    "@components/*":["components/*"],
+    "@cors": ["cors-middleware.ts"],
+    "@store/*":["store/*"],
     "config/*":["config/*"],
     "constants/*":["constants/*"],
     "context/*":["context/*"],

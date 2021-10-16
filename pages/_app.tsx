@@ -1,16 +1,19 @@
 import { AppProps } from 'next/app';
-import Layout from 'component/Layout/Layout';
+import 'semantic-ui-css/semantic.min.css';
+import '../global.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import CartProvider from '@store/Cart';
+
+const MyApp = ({ Component, pageProps }: AppProps) => {
   // Providers -- context/providers, theme, data
   // layout
   // props add ons
   return (
-    <Layout>
+    <CartProvider>
       <Component {...pageProps} />
-    </Layout>
+    </CartProvider>
   );
-}
+};
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to

@@ -1,3 +1,6 @@
+import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader';
+import Layout from '@components/Layout/Layout';
+import ProductList from '@components/ProductList/ProductList';
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
@@ -7,18 +10,16 @@ const Home = () => {
     window
       .fetch('api/avo')
       .then((response) => response.json())
-      .then(({ data, length }) => {
+      .then(({ data }: TAPIAvoResponse) => {
         setProductList(data);
       });
   }, []);
 
   return (
-    <div>
-      <h1>Productos</h1>
-      {productList.map((product, i) => (
-        <div key={i}>{product.name}</div>
-      ))}
-    </div>
+    <Layout>
+      <KawaiiHeader />
+      <ProductList products={productList} />
+    </Layout>
   );
 };
 

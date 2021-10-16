@@ -10,7 +10,7 @@ class MyDocument extends Document {
           {/* stylesheet */}
           {/* scripts */}
         </Head>
-        <body className='my-body=example'>
+        <body className='my-body-class'>
           <Main />
           <NextScript />
         </body>
