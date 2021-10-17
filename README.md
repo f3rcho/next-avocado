@@ -21,3 +21,6 @@ To use debugger on next just add to the scripts on package.json
 ## Extend app
 
 - In the \_app file we can inject anabolics (providers, themes, props, or whatever we need) to our whole application.
+
+##Production
+You can find the project here: https://next-avocado.vercel.app/
