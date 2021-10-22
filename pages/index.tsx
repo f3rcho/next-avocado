@@ -5,7 +5,8 @@ import { API_URL } from 'common/const/const';
 import React from 'react';
 import Link from 'next/link';
 
-export const getServerSideProps = async () => {
+// On static, just one request is made the build the web
+export const getStaticProps = async () => {
   try {
     const response = await fetch(`${API_URL}/avo`);
     const { data: productList }: TAPIAvoResponse = await response.json();
@@ -20,6 +21,23 @@ export const getServerSideProps = async () => {
     throw error;
   }
 };
+
+// On server side, one request is made each time the user connects to build the web
+// export const getServerSideProps = async () => {
+//   try {
+//     const response = await fetch(`${API_URL}/avo`);
+//     const { data: productList }: TAPIAvoResponse = await response.json();
+
+//     return {
+//       props: {
+//         productList,
+//       },
+//     };
+//   } catch (error) {
+//     console.error('Error fetching data', error);
+//     throw error;
+//   }
+// };
 
 const Home = ({ productList }: { productList: TProduct[] }) => {
   return (
