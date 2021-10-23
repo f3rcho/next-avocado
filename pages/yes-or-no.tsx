@@ -32,8 +32,8 @@ const YesOrNo = ({ initialResult }: { initialResult: string }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchResult().then((initialResult) => {
-      setResult(initialResult);
+    fetchResult().then((initialResults) => {
+      setResult(initialResults);
       setIsLoading(false);
     });
   }, [triggerCount]);
