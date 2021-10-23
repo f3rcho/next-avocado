@@ -24,3 +24,13 @@ To use debugger on next just add to the scripts on package.json
 
 ##Production
 You can find the project here: https://next-avocado.vercel.app/
+
+##Deploying Static Side Generating
+When we generate static sides, we can deploy in githubpages, but also we could user
+
+```bash
+$ npx serve .
+```
+
+after modifying and run the script
+npm run export
