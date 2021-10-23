@@ -1,16 +1,16 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import Layout from '@components/Layout/Layout';
 import ProductSummary from '@components/ProductSummary/ProductSummary';
 import { API_URL } from 'common/const/const';
 
 // we need to use getStaticPath together with getStaticProps in order to render dynamically
-export const getStaticPath = async () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const response = await fetch(`${API_URL}/avo`);
   const { data }: TAPIAvoResponse = await response.json();
 
-  const paths = data.map(({ id }) => ({ params: id }));
+  const paths = data.map(({ id }) => ({ params: { id } }));
 
   return {
     //statically generate all paths

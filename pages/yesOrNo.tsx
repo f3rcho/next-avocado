@@ -10,7 +10,7 @@ type YesOrNoApiResponse = {
 };
 
 const fetchResult = async () => {
-  const res = await fetch(`${API_URL}/avo/yes-or-no`);
+  const res = await fetch(`${API_URL}/yes-or-no`);
   const { data }: YesOrNoApiResponse = await res.json();
   return data;
 };
@@ -50,7 +50,12 @@ const YesOrNo = ({ initialResult }: { initialResult: string }) => {
         </Header>
 
         <p>
-          <Button color='green' onClick={onClick} loading={isLoading}>
+          <Button
+            color='green'
+            onClick={onClick}
+            loading={isLoading}
+            disabled={isLoading}
+          >
             Intentar de nuevo
           </Button>
         </p>
